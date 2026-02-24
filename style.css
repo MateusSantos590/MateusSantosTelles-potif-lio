@@ -1017,8 +1017,10 @@ ul {
 /* ---------- Contact ---------- */
 .contact-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
+  max-width: 860px;
+  margin-inline: auto;
 }
 
 .contact-card {
@@ -1231,6 +1233,10 @@ ul {
   .skills-panel,
   .learning-path {
     padding: 1.25rem;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
   }
 
   .footer-inner {
