@@ -38,7 +38,18 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 
-<body>
+<body class="intro-active">
+
+  <!-- ── Intro Splash ──────────────────────── -->
+  <div id="intro-splash" role="status" aria-label="Carregando…">
+    <span class="intro-logo">
+      <span class="logo-bracket">&lt;</span>mateus_telles0<span class="logo-bracket">/&gt;</span>
+    </span>
+    <div class="intro-bar-wrap">
+      <div class="intro-bar-fill"></div>
+    </div>
+    <span class="intro-tagline">// carregando portfólio…</span>
+  </div>
 
   <!-- Partículas de fundo -->
   <div class="bg-glow" aria-hidden="true"></div>
@@ -191,9 +202,9 @@
       <div class="container">
         <div class="section-header" data-reveal>
           <span class="section-label">// habilidades</span>
-          <h2 class="section-title">O que estou aprendendo</h2>
-          <p class="section-desc">Minha jornada de estudo contínua — do básico ao mercado real.</p>
-        </div>
+          <h2 class="section-title">Área de Aprendizagem</h2>
+          <p class="section-desc">Minha jornada de estudo contínua</p>
+        </div>""
 
         <!-- Bloco 1: Gráfico Circular de Domínio -->
         <div class="skills-rings-panel skills-panel" data-reveal>
@@ -326,7 +337,7 @@
             <span class="ring-info-ico" id="ring-info-ico">💡</span>
             <div class="ring-info-text">
               <strong id="ring-info-title">Passe o mouse sobre uma habilidade</strong>
-              <span id="ring-info-note">Cada anel mostra meu nível atual de domínio nessa tecnologia.</span>
+              <span id="ring-info-note">Cada bloco mostra meu nível atual de domínio nessa tecnologia.</span>
             </div>
             <span class="ring-info-badge" id="ring-info-badge"></span>
           </div>
@@ -339,52 +350,93 @@
             <span class="skills-panel-icon">🗺️</span>
             <div>
               <h3 class="skills-panel-title">Caminho de Aprendizado</h3>
-              <p class="skills-panel-sub">Onde estou e para onde estou indo</p>
+              <p class="skills-panel-sub">Cada fase é um degrau — veja onde estou e para onde vou</p>
             </div>
           </div>
-          <div class="path-timeline">
-            <div class="path-item path-item--done">
-              <div class="path-dot"><span>✓</span></div>
-              <div class="path-content">
-                <strong>Lógica & Fundamentos</strong>
-                <span>Python · variáveis · condicionais · loops</span>
+
+          <div class="path-roadmap">
+
+            <div class="path-phase path-phase--done">
+              <div class="path-phase-icon">🧱</div>
+              <div class="path-phase-body">
+                <div class="path-phase-top">
+                  <div>
+                    <span class="path-phase-badge path-phase-badge--done">✓ Concluído</span>
+                    <strong class="path-phase-title">Lógica &amp; Fundamentos</strong>
+                  </div>
+                </div>
+                <p class="path-phase-desc">Python · variáveis · condicionais · loops · funções · OOP básico</p>
               </div>
             </div>
-            <div class="path-item path-item--done">
-              <div class="path-dot"><span>✓</span></div>
-              <div class="path-content">
-                <strong>Primeiro Projeto Real</strong>
-                <span>Site de Clima com OpenWeather API</span>
+
+            <div class="path-phase path-phase--done">
+              <div class="path-phase-icon">🌦️</div>
+              <div class="path-phase-body">
+                <div class="path-phase-top">
+                  <div>
+                    <span class="path-phase-badge path-phase-badge--done">✓ Concluído</span>
+                    <strong class="path-phase-title">Primeiro Projeto Real</strong>
+                  </div>
+                </div>
+                <p class="path-phase-desc">Site de Clima consumindo a OpenWeather API — Python + HTML/CSS</p>
               </div>
             </div>
-            <div class="path-item path-item--done">
-              <div class="path-dot"><span>✓</span></div>
-              <div class="path-content">
-                <strong>Back-End com banco de dados</strong>
-                <span>Gestor de Senhas · Flask + SQLite + HTML/CSS</span>
+
+            <div class="path-phase path-phase--done">
+              <div class="path-phase-icon">🔐</div>
+              <div class="path-phase-body">
+                <div class="path-phase-top">
+                  <div>
+                    <span class="path-phase-badge path-phase-badge--done">✓ Concluído</span>
+                    <strong class="path-phase-title">Back-End com Banco de Dados</strong>
+                  </div>
+                </div>
+                <p class="path-phase-desc">Gestor de Senhas · Flask + SQLite + HTML/CSS · CRUD completo</p>
               </div>
             </div>
-            <div class="path-item path-item--active">
-              <div class="path-dot"><span>→</span></div>
-              <div class="path-content">
-                <strong>Aprofundamento Back-End</strong>
-                <span>Flask avançado · autenticação · deploy · APIs próprias</span>
+
+            <div class="path-phase path-phase--active">
+              <div class="path-phase-icon">⚡</div>
+              <div class="path-phase-body">
+                <div class="path-phase-top">
+                  <div>
+                    <span class="path-phase-badge path-phase-badge--active">→ Em andamento</span>
+                    <strong class="path-phase-title">Aprofundamento Back-End</strong>
+                  </div>
+                </div>
+                <p class="path-phase-desc">Flask avançado · autenticação · deploy · APIs próprias · boas práticas</p>
+                <div class="path-phase-progress">
+                  <div class="path-phase-progress-bar" style="--phase-pct: 45%"></div>
+                </div>
               </div>
             </div>
-            <div class="path-item path-item--next">
-              <div class="path-dot"><span></span></div>
-              <div class="path-content">
-                <strong>DevOps & Infraestrutura</strong>
-                <span>Docker · CI/CD · Linux · Cloud (intro)</span>
+
+            <div class="path-phase path-phase--next">
+              <div class="path-phase-icon">🐳</div>
+              <div class="path-phase-body">
+                <div class="path-phase-top">
+                  <div>
+                    <span class="path-phase-badge path-phase-badge--next">⏳ Próximo</span>
+                    <strong class="path-phase-title">DevOps &amp; Infraestrutura</strong>
+                  </div>
+                </div>
+                <p class="path-phase-desc">Docker · CI/CD · Linux · Cloud (intro)</p>
               </div>
             </div>
-            <div class="path-item path-item--next">
-              <div class="path-dot"><span></span></div>
-              <div class="path-content">
-                <strong>Especialização</strong>
-                <span>IA / ML · Cybersegurança · Engenharia de Dados</span>
+
+            <div class="path-phase path-phase--next">
+              <div class="path-phase-icon">🚀</div>
+              <div class="path-phase-body">
+                <div class="path-phase-top">
+                  <div>
+                    <span class="path-phase-badge path-phase-badge--next">⏳ Futuro</span>
+                    <strong class="path-phase-title">Especialização</strong>
+                  </div>
+                </div>
+                <p class="path-phase-desc">IA / ML · Cybersegurança · Engenharia de Dados</p>
               </div>
             </div>
+
           </div>
         </div>
 
@@ -813,7 +865,7 @@
       <span class="footer-logo">
         <span class="logo-bracket">&lt;</span>mateus_telles0<span class="logo-bracket">/&gt;</span>
       </span>
-      <p class="footer-copy">Feito com 💜 e muito Python — 2025</p>
+      <p class="footer-copy">Segue para mais conteúdo</p>
     </div>
   </footer>
 

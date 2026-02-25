@@ -26,7 +26,9 @@
     }
 
     function init() {
-        const count = Math.min(80, Math.floor((canvas.width * canvas.height) / 18000));
+        const isMobile = window.innerWidth < 768;
+        const maxParticles = isMobile ? 40 : 80;
+        const count = Math.min(maxParticles, Math.floor((canvas.width * canvas.height) / 18000));
         particles = Array.from({ length: count }, createParticle);
     }
 
@@ -285,8 +287,10 @@
 })();
 
 
-// ── Pixel Trail on Mouse Move ─────────────────────
+// ── Pixel Trail on Mouse Move (desktop only) ─────────────────
+// Disabled on touch devices — no cursor, wastes resources on mobile
 (function pixelTrail() {
+    if ('ontouchstart' in window) return; // skip on touch devices
     const COLORS = [
         '#8b5cf6', '#7c3aed', '#06b6d4', '#e879f9',
         '#a78bfa', '#22d3ee', '#c084fc', '#38bdf8'
@@ -410,3 +414,79 @@
 
     observer.observe(panel);
 })();
+
+
+// ── Intro Splash Dismiss ──────────────────────────
+(function introSplash() {
+    const splash = document.getElementById('intro-splash');
+    if (!splash) return;
+
+    // Total splash duration: 0.7s bar + a bit of pause = ~1 400ms
+    const SPLASH_DURATION = 1400;
+
+    setTimeout(() => {
+        splash.classList.add('done');
+        document.body.classList.remove('intro-active');
+
+        // Remove from DOM after transition ends so it doesn't block a11y
+        splash.addEventListener('transitionend', () => {
+            splash.remove();
+        }, { once: true });
+    }, SPLASH_DURATION);
+})();
+
+
+// ── Ring Card Click Ripple ────────────────────────
+(function ringClickRipple() {
+    document.querySelectorAll('.ring-card').forEach(card => {
+        card.addEventListener('click', function (e) {
+            // Use the card's accent colour if available
+            const color = this.dataset.color || '#8b5cf6';
+
+            const ripple = document.createElement('span');
+            ripple.className = 'ring-ripple';
+            ripple.style.background = color + '88';
+
+            const rect = this.getBoundingClientRect();
+            const x = e.clientX - rect.left - 3; // centre the 6px dot
+            const y = e.clientY - rect.top - 3;
+            ripple.style.left = x + 'px';
+            ripple.style.top = y + 'px';
+
+            this.appendChild(ripple);
+            ripple.addEventListener('animationend', () => ripple.remove(), { once: true });
+        });
+    });
+})();
+
+
+// ── Path Phase Click Flash ────────────────────────
+(function pathPhaseClick() {
+    document.querySelectorAll('.path-phase').forEach(phase => {
+        phase.addEventListener('click', function () {
+            this.classList.remove('click-flash');
+            // force reflow so the CSS animation restarts
+            void this.offsetWidth;
+            this.classList.add('click-flash');
+            this.addEventListener('animationend', () => {
+                this.classList.remove('click-flash');
+            }, { once: true });
+        });
+    });
+})();
+
+
+// ── Interest Card Click Pulse ─────────────────────
+(function interestCardPulse() {
+    document.querySelectorAll('.interest-card').forEach(card => {
+        card.addEventListener('click', function () {
+            this.classList.remove('click-pulse');
+            void this.offsetWidth; // reflow
+            this.classList.add('click-pulse');
+            this.addEventListener('animationend', () => {
+                this.classList.remove('click-pulse');
+            }, { once: true });
+        });
+    });
+})();
+
