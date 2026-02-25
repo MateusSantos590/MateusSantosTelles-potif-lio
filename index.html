@@ -11,6 +11,15 @@
   <meta property="og:description"
     content="Estudante de ADS e programação Back-End com Python. Projetos reais, mentalidade de evolução contínua." />
   <meta property="og:type" content="website" />
+  <meta property="og:image" content="og-preview.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Mateus Telles — Dev em construção" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Mateus Telles | Dev em construção" />
+  <meta name="twitter:description"
+    content="Estudante de ADS e programação Back-End com Python. Projetos reais, mentalidade de evolução contínua." />
+  <meta name="twitter:image" content="og-preview.png" />
   <title>Mateus Telles | Dev em construção</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -38,9 +47,14 @@
         <li><a href="#projetos">Projetos</a></li>
         <li><a href="#contato">Contato</a></li>
       </ul>
-      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="nav-end">
+        <button class="secret-btn" id="secret-btn" aria-label="Modo secreto" title="">
+          <span class="secret-btn-icon">📚</span>
+        </button>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </nav>
   </header>
 
@@ -114,7 +128,8 @@
           <div class="about-text" data-reveal>
             <p>Sou estudante de <strong>Análise e Desenvolvimento de Sistemas (ADS – UNG)</strong> com foco em
               <strong>programação Back-End com Python</strong>. Meu objetivo é entrar e crescer na área de TI aplicando
-              conhecimento real, não só teoria.</p>
+              conhecimento real, não só teoria.
+            </p>
             <p>Tenho mentalidade de <strong>evolução contínua</strong>: todos os dias estudo, pratico e construo
               projetos reais. Não me interessa "fazer por fazer" — me interessa estratégia, impacto e resultado.</p>
             <p>Atualmente estudo inglês de forma consistente (Fisk + Duolingo) e também tenho interesse em <strong>IA,
@@ -171,77 +186,142 @@
           <p class="section-desc">Minha jornada de estudo contínua — do básico ao mercado real.</p>
         </div>
 
-        <!-- Bloco 1: Barras de Domínio -->
-        <div class="skills-panel" data-reveal>
+        <!-- Bloco 1: Gráfico Circular de Domínio -->
+        <div class="skills-rings-panel skills-panel" data-reveal>
           <div class="skills-panel-header">
             <span class="skills-panel-icon">⚡</span>
             <div>
               <h3 class="skills-panel-title">Domínio Atual</h3>
-              <p class="skills-panel-sub">Tecnologias que já uso em projetos reais</p>
+              <p class="skills-panel-sub">Passe o mouse sobre cada habilidade para saber mais</p>
             </div>
           </div>
-          <div class="dominio-list">
-            <div class="dominio-item">
-              <div class="dominio-meta">
-                <span class="dominio-label"><span class="dominio-icon">🐍</span> Python</span>
-                <span class="dominio-pct">70%</span>
+
+          <div class="rings-grid">
+
+            <div class="ring-card" data-icon="🤖" data-label="IA & LLMs" data-pct="75" data-color="#8b5cf6"
+              data-note="Engenharia de prompts avançados, Claude AI, n8n e fluxos de automação inteligentes. Meu maior interesse — crescendo rápido.">
+              <div class="ring-svg-wrap">
+                <svg viewBox="0 0 100 100" class="ring-svg">
+                  <circle class="ring-track" cx="50" cy="50" r="38" />
+                  <circle class="ring-progress" cx="50" cy="50" r="38" stroke="#8b5cf6" data-target="59.69"
+                    stroke-dasharray="238.76 238.76" stroke-dashoffset="238.76" transform="rotate(-90 50 50)" />
+                </svg>
+                <div class="ring-center">
+                  <span class="ring-emoji">🤖</span>
+                  <span class="ring-num">75%</span>
+                </div>
               </div>
-              <div class="skill-bar skill-bar--lg">
-                <div class="skill-fill" style="--pct:70%"></div>
-              </div>
-              <span class="dominio-note">variáveis · condicionais · loops · funções · OOP básico</span>
+              <span class="ring-name">IA & LLMs</span>
             </div>
-            <div class="dominio-item">
-              <div class="dominio-meta">
-                <span class="dominio-label"><span class="dominio-icon">🌐</span> HTML / CSS</span>
-                <span class="dominio-pct">65%</span>
+
+            <div class="ring-card" data-icon="🐍" data-label="Python" data-pct="70" data-color="#f59e0b"
+              data-note="Variáveis, condicionais, loops, funções e OOP básico. Minha principal linguagem — uso em todos os projetos Back-End e automações.">
+              <div class="ring-svg-wrap">
+                <svg viewBox="0 0 100 100" class="ring-svg">
+                  <circle class="ring-track" cx="50" cy="50" r="38" />
+                  <circle class="ring-progress" cx="50" cy="50" r="38" stroke="#f59e0b" data-target="71.63"
+                    stroke-dasharray="238.76 238.76" stroke-dashoffset="238.76" transform="rotate(-90 50 50)" />
+                </svg>
+                <div class="ring-center">
+                  <span class="ring-emoji">🐍</span>
+                  <span class="ring-num">70%</span>
+                </div>
               </div>
-              <div class="skill-bar skill-bar--lg">
-                <div class="skill-fill" style="--pct:65%"></div>
-              </div>
-              <span class="dominio-note">estrutura semântica · flexbox · responsividade básica</span>
+              <span class="ring-name">Python</span>
             </div>
-            <div class="dominio-item">
-              <div class="dominio-meta">
-                <span class="dominio-label"><span class="dominio-icon">🌶️</span> Flask</span>
-                <span class="dominio-pct">55%</span>
+
+            <div class="ring-card" data-icon="🌐" data-label="HTML / CSS" data-pct="65" data-color="#06b6d4"
+              data-note="Estrutura semântica, Flexbox e responsividade básica. Consigo construir interfaces funcionais e estilizadas do zero.">
+              <div class="ring-svg-wrap">
+                <svg viewBox="0 0 100 100" class="ring-svg">
+                  <circle class="ring-track" cx="50" cy="50" r="38" />
+                  <circle class="ring-progress" cx="50" cy="50" r="38" stroke="#06b6d4" data-target="83.57"
+                    stroke-dasharray="238.76 238.76" stroke-dashoffset="238.76" transform="rotate(-90 50 50)" />
+                </svg>
+                <div class="ring-center">
+                  <span class="ring-emoji">🌐</span>
+                  <span class="ring-num">65%</span>
+                </div>
               </div>
-              <div class="skill-bar skill-bar--lg">
-                <div class="skill-fill" style="--pct:55%; background: linear-gradient(90deg,#7c3aed,#e879f9)"></div>
-              </div>
-              <span class="dominio-note">rotas · templates · formulários · integração com DB</span>
+              <span class="ring-name">HTML / CSS</span>
             </div>
-            <div class="dominio-item">
-              <div class="dominio-meta">
-                <span class="dominio-label"><span class="dominio-icon">🔗</span> APIs REST</span>
-                <span class="dominio-pct">55%</span>
+
+            <div class="ring-card" data-icon="🌶️" data-label="Flask" data-pct="55" data-color="#e879f9"
+              data-note="Rotas, templates Jinja2, formulários e integração com banco de dados. Framework que uso nos meus projetos Back-End reais.">
+              <div class="ring-svg-wrap">
+                <svg viewBox="0 0 100 100" class="ring-svg">
+                  <circle class="ring-track" cx="50" cy="50" r="38" />
+                  <circle class="ring-progress" cx="50" cy="50" r="38" stroke="#e879f9" data-target="107.44"
+                    stroke-dasharray="238.76 238.76" stroke-dashoffset="238.76" transform="rotate(-90 50 50)" />
+                </svg>
+                <div class="ring-center">
+                  <span class="ring-emoji">🌶️</span>
+                  <span class="ring-num">55%</span>
+                </div>
               </div>
-              <div class="skill-bar skill-bar--lg">
-                <div class="skill-fill" style="--pct:55%; background: linear-gradient(90deg,#0891b2,#22d3ee)"></div>
-              </div>
-              <span class="dominio-note">consumo via requests · OpenWeather · autenticação básica</span>
+              <span class="ring-name">Flask</span>
             </div>
-            <div class="dominio-item">
-              <div class="dominio-meta">
-                <span class="dominio-label"><span class="dominio-icon">🗄️</span> SQLite</span>
-                <span class="dominio-pct">50%</span>
+
+            <div class="ring-card" data-icon="🔗" data-label="APIs REST" data-pct="55" data-color="#22d3ee"
+              data-note="Consumo de APIs externas via requests, integração com OpenWeather e autenticação básica em projetos reais.">
+              <div class="ring-svg-wrap">
+                <svg viewBox="0 0 100 100" class="ring-svg">
+                  <circle class="ring-track" cx="50" cy="50" r="38" />
+                  <circle class="ring-progress" cx="50" cy="50" r="38" stroke="#22d3ee" data-target="107.44"
+                    stroke-dasharray="238.76 238.76" stroke-dashoffset="238.76" transform="rotate(-90 50 50)" />
+                </svg>
+                <div class="ring-center">
+                  <span class="ring-emoji">🔗</span>
+                  <span class="ring-num">55%</span>
+                </div>
               </div>
-              <div class="skill-bar skill-bar--lg">
-                <div class="skill-fill" style="--pct:50%; background: linear-gradient(90deg,#059669,#34d399)"></div>
-              </div>
-              <span class="dominio-note">CRUD · esquemas · integração com Flask/Python</span>
+              <span class="ring-name">APIs REST</span>
             </div>
-            <div class="dominio-item">
-              <div class="dominio-meta">
-                <span class="dominio-label"><span class="dominio-icon">🐙</span> Git / GitLab</span>
-                <span class="dominio-pct">45%</span>
+
+            <div class="ring-card" data-icon="🗄️" data-label="SQLite" data-pct="50" data-color="#34d399"
+              data-note="CRUD completo, criação de esquemas e integração com Flask e Python. Banco de dados que uso nos meus projetos web.">
+              <div class="ring-svg-wrap">
+                <svg viewBox="0 0 100 100" class="ring-svg">
+                  <circle class="ring-track" cx="50" cy="50" r="38" />
+                  <circle class="ring-progress" cx="50" cy="50" r="38" stroke="#34d399" data-target="119.38"
+                    stroke-dasharray="238.76 238.76" stroke-dashoffset="238.76" transform="rotate(-90 50 50)" />
+                </svg>
+                <div class="ring-center">
+                  <span class="ring-emoji">🗄️</span>
+                  <span class="ring-num">50%</span>
+                </div>
               </div>
-              <div class="skill-bar skill-bar--lg">
-                <div class="skill-fill" style="--pct:45%; background: linear-gradient(90deg,#d97706,#fbbf24)"></div>
-              </div>
-              <span class="dominio-note">commits · push · pull · branches básicas · CI/CD intro</span>
+              <span class="ring-name">SQLite</span>
             </div>
+
+            <div class="ring-card" data-icon="🐙" data-label="Git / GitLab" data-pct="45" data-color="#fbbf24"
+              data-note="Commits, push, pull e branches básicas. Versionamento de todos os projetos no GitLab — inclusive este site está hospedado lá.">
+              <div class="ring-svg-wrap">
+                <svg viewBox="0 0 100 100" class="ring-svg">
+                  <circle class="ring-track" cx="50" cy="50" r="38" />
+                  <circle class="ring-progress" cx="50" cy="50" r="38" stroke="#fbbf24" data-target="131.32"
+                    stroke-dasharray="238.76 238.76" stroke-dashoffset="238.76" transform="rotate(-90 50 50)" />
+                </svg>
+                <div class="ring-center">
+                  <span class="ring-emoji">🐙</span>
+                  <span class="ring-num">45%</span>
+                </div>
+              </div>
+              <span class="ring-name">Git / GitLab</span>
+            </div>
+
+          </div><!-- /rings-grid -->
+
+          <!-- Painel de info que muda ao hover -->
+          <div class="ring-info-box" id="ring-info-box">
+            <span class="ring-info-ico" id="ring-info-ico">💡</span>
+            <div class="ring-info-text">
+              <strong id="ring-info-title">Passe o mouse sobre uma habilidade</strong>
+              <span id="ring-info-note">Cada anel mostra meu nível atual de domínio nessa tecnologia.</span>
+            </div>
+            <span class="ring-info-badge" id="ring-info-badge"></span>
           </div>
+
         </div>
 
         <!-- Bloco 2: Caminho de Aprendizado -->
@@ -302,14 +382,25 @@
         <!-- Bloco 3: Interesse & Metodologias -->
         <div class="interest-grid" data-reveal data-delay="250">
           <div class="interest-card">
+            <span class="interest-icon">�</span>
+            <strong>Engenharia de Prompt</strong>
+            <span>Criação de prompts avançados, técnicas de chain-of-thought, few-shot e uso estratégico de LLMs</span>
+          </div>
+          <div class="interest-card">
             <span class="interest-icon">🤖</span>
-            <strong>IA & Prompt Eng.</strong>
-            <span>Estudando aplicações práticas e engenharia de prompts para integrar IA em projetos</span>
+            <strong>Claude AI</strong>
+            <span>Explorando o modelo da Anthropic para automação, análise de texto e integração em fluxos de
+              trabalho</span>
+          </div>
+          <div class="interest-card">
+            <span class="interest-icon">⚡</span>
+            <strong>n8n — Automação com IA</strong>
+            <span>Criando fluxos de automação inteligentes conectando APIs, IA e sistemas com o n8n</span>
           </div>
           <div class="interest-card">
             <span class="interest-icon">🔐</span>
             <strong>Cybersegurança</strong>
-            <span>Interest in ethical hacking, fundamentos de segurança em aplicações web</span>
+            <span>Ethical hacking, fundamentos de segurança em aplicações web e proteção de dados</span>
           </div>
           <div class="interest-card">
             <span class="interest-icon">📈</span>
@@ -383,7 +474,7 @@
             </div>
           </article>
 
-          <article class="project-card project-card--soon" data-reveal data-delay="300">
+          <div class="project-card project-card--soon" data-reveal data-delay="300">
             <div class="project-glow"></div>
             <div class="project-top">
               <span class="project-icon">⚡</span>
@@ -393,7 +484,7 @@
               ser o primeiro a saber.</p>
             <a href="https://github.com/MateusSantos590" target="_blank" rel="noopener"
               class="btn btn-outline btn-sm">Seguir no GitHub</a>
-          </article>
+          </div>
         </div>
       </div>
     </section>
@@ -451,6 +542,261 @@
       </div>
     </section>
   </main>
+
+  <!-- ═══════════════════════════════════════════
+       PAINEL SECRETO — Livros & Mais sobre mim
+       Ativado pelo botão 📚 no canto do header
+       ═══════════════════════════════════════════ -->
+  <div class="secret-panel" id="secret-panel" aria-hidden="true">
+    <div class="secret-overlay" id="secret-overlay"></div>
+    <div class="secret-drawer">
+      <button class="secret-close" id="secret-close" aria-label="Fechar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="22" height="22">
+          <path d="M18 6L6 18M6 6l12 12" />
+        </svg>
+      </button>
+
+      <div class="secret-header">
+        <span class="secret-label">// modo secreto</span>
+        <h2 class="secret-title">Mais sobre <span class="gradient-text">Mateus Telles</span></h2>
+        <p class="secret-desc">O que você não vê no currículo — o que eu leio, o que me move, o que molda quem sou.</p>
+      </div>
+
+      <!-- ── Sobre mim expandido ───────────────── -->
+      <div class="secret-section">
+        <h3 class="secret-section-title"><span>🧠</span> Quem eu sou de verdade</h3>
+        <div class="secret-about-grid">
+          <div class="secret-about-card">
+            <span class="secret-about-icon">⚡</span>
+            <div>
+              <strong>Mentalidade</strong>
+              <span>Execução acima de perfeição. Prefiro errar rápido, aprender mais rápido ainda e construir algo de
+                verdade.</span>
+            </div>
+          </div>
+          <div class="secret-about-card">
+            <span class="secret-about-icon">🎯</span>
+            <div>
+              <strong>Foco</strong>
+              <span>Não me interessa apenas programar — me interessa resolver problemas reais com tecnologia, estratégia
+                e impacto.</span>
+            </div>
+          </div>
+          <div class="secret-about-card">
+            <span class="secret-about-icon">📖</span>
+            <div>
+              <strong>Leitor compulsivo</strong>
+              <span>Tecnologia, filosofia, estoicismo, persuasão, liderança, finanças — se expande minha mente, eu
+                leio.</span>
+            </div>
+          </div>
+          <div class="secret-about-card">
+            <span class="secret-about-icon">✝️</span>
+            <div>
+              <strong>Fé como fundamento</strong>
+              <span>Cristão. A espiritualidade não é separada da ambição — é o que a ancora e dá propósito a
+                tudo.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Biblioteca pessoal ────────────────── -->
+      <div class="secret-section">
+        <h3 class="secret-section-title"><span>📚</span> Minha biblioteca pessoal <span class="book-count-badge">43
+            livros</span></h3>
+
+        <div class="books-categories">
+
+          <div class="book-category">
+            <div class="book-cat-header">
+              <span class="book-cat-icon">💻</span>
+              <span class="book-cat-name">Tecnologia &amp; Ciência</span>
+            </div>
+            <ul class="book-list">
+              <li><span class="book-emoji">🔧</span>
+                <div><strong>Armas e Ferramentas</strong><span>Brad Smith</span></div>
+              </li>
+              <li><span class="book-emoji">📊</span>
+                <div><strong>Entendendo Algoritmos</strong><span>Aditya Bhargava</span></div>
+              </li>
+              <li><span class="book-emoji">🏗️</span>
+                <div><strong>Arquitetura Limpa</strong><span>Robert C. Martin</span></div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="book-category">
+            <div class="book-cat-header">
+              <span class="book-cat-icon">🧠</span>
+              <span class="book-cat-name">Psicologia &amp; Comportamento</span>
+            </div>
+            <ul class="book-list">
+              <li><span class="book-emoji">💬</span>
+                <div><strong>Como Fazer Amigos e Influenciar Pessoas</strong><span>Dale Carnegie</span></div>
+              </li>
+              <li><span class="book-emoji">🧠</span>
+                <div><strong>Inteligência Emocional</strong><span>Daniel Goleman</span></div>
+              </li>
+              <li><span class="book-emoji">🃏</span>
+                <div><strong>Iludidos pelo Acaso</strong><span>Nassim Taleb</span></div>
+              </li>
+              <li><span class="book-emoji">👁️</span>
+                <div><strong>O Que Todo Corpo Fala</strong><span>Joe Navarro</span></div>
+              </li>
+              <li><span class="book-emoji">🌱</span>
+                <div><strong>Mindset</strong><span>Carol Dweck</span></div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="book-category">
+            <div class="book-cat-header">
+              <span class="book-cat-icon">💪</span>
+              <span class="book-cat-name">Mentalidade &amp; Crescimento</span>
+            </div>
+            <ul class="book-list">
+              <li><span class="book-emoji">🎯</span>
+                <div><strong>Essencialismo</strong><span>Greg McKeown</span></div>
+              </li>
+              <li><span class="book-emoji">😤</span>
+                <div><strong>O Ego é Seu Inimigo</strong><span>Ryan Holiday</span></div>
+              </li>
+              <li><span class="book-emoji">🛏️</span>
+                <div><strong>Arrume Sua Cama</strong><span>William H. McRaven</span></div>
+              </li>
+              <li><span class="book-emoji">🔥</span>
+                <div><strong>Nada Pode Me Ferir</strong><span>David Goggins</span></div>
+              </li>
+              <li><span class="book-emoji">💎</span>
+                <div><strong>Garra: O Poder da Paixão e da Perseverança</strong><span>Angela Duckworth</span></div>
+              </li>
+              <li><span class="book-emoji">🗣️</span>
+                <div><strong>Brevidade Inteligente</strong><span>Jim VandeHei et al.</span></div>
+              </li>
+              <li><span class="book-emoji">🖕</span>
+                <div><strong>A Sutil Arte de Ligar o Foda-se</strong><span>Mark Manson</span></div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="book-category">
+            <div class="book-cat-header">
+              <span class="book-cat-icon">⚔️</span>
+              <span class="book-cat-name">Estratégia &amp; Poder</span>
+            </div>
+            <ul class="book-list">
+              <li><span class="book-emoji">🎖️</span>
+                <div><strong>A Arte da Guerra</strong><span>Sun Tzu</span></div>
+              </li>
+              <li><span class="book-emoji">👑</span>
+                <div><strong>As 48 Leis do Poder</strong><span>Robert Greene</span></div>
+              </li>
+              <li><span class="book-emoji">🦁</span>
+                <div><strong>O Príncipe</strong><span>Maquiavel</span></div>
+              </li>
+              <li><span class="book-emoji">🤝</span>
+                <div><strong>Como Chegar ao Sim!</strong><span>Fisher &amp; Ury</span></div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="book-category">
+            <div class="book-cat-header">
+              <span class="book-cat-icon">💰</span>
+              <span class="book-cat-name">Finanças &amp; Riqueza</span>
+            </div>
+            <ul class="book-list">
+              <li><span class="book-emoji">💵</span>
+                <div><strong>A Psicologia Financeira</strong><span>Morgan Housel</span></div>
+              </li>
+              <li><span class="book-emoji">🏛️</span>
+                <div><strong>O Homem Mais Rico da Babilônia</strong><span>George S. Clason</span></div>
+              </li>
+              <li><span class="book-emoji">🎲</span>
+                <div><strong>Antifrágil</strong><span>Nassim Taleb</span></div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="book-category">
+            <div class="book-cat-header">
+              <span class="book-cat-icon">🎙️</span>
+              <span class="book-cat-name">Comunicação &amp; Persuasão</span>
+            </div>
+            <ul class="book-list">
+              <li><span class="book-emoji">🎤</span>
+                <div><strong>Como Falar em Público e Encantar as Pessoas</strong><span>Dale Carnegie</span></div>
+              </li>
+              <li><span class="book-emoji">🧲</span>
+                <div><strong>Armas da Persuasão</strong><span>Robert Cialdini</span></div>
+              </li>
+              <li><span class="book-emoji">🕵️</span>
+                <div><strong>Manual de Persuasão do FBI</strong><span>Jack Schafer</span></div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="book-category">
+            <div class="book-cat-header">
+              <span class="book-cat-icon">✝️</span>
+              <span class="book-cat-name">Fé &amp; Espiritualidade</span>
+            </div>
+            <ul class="book-list">
+              <li><span class="book-emoji">🔥</span>
+                <div><strong>O Deus que Destrói Sonhos</strong><span>—</span></div>
+              </li>
+              <li><span class="book-emoji">😴</span>
+                <div><strong>Como se Tornar um Cristão Inútil</strong><span>—</span></div>
+              </li>
+              <li><span class="book-emoji">✨</span>
+                <div><strong>O Poder da Glória</strong><span>—</span></div>
+              </li>
+              <li><span class="book-emoji">📜</span>
+                <div><strong>Confissões</strong><span>Santo Agostinho</span></div>
+              </li>
+              <li><span class="book-emoji">😈</span>
+                <div><strong>Cartas de um Diabo ao Seu Aprendiz</strong><span>C.S. Lewis</span></div>
+              </li>
+              <li><span class="book-emoji">👻</span>
+                <div><strong>Os Livros dos Warren — Demonologistas</strong><span>Ed &amp; Lorraine Warren</span></div>
+              </li>
+              <li><span class="book-emoji">💫</span>
+                <div><strong>Os Livros dos Warren — Vidas Eternas</strong><span>Ed &amp; Lorraine Warren</span></div>
+              </li>
+              <li><span class="book-emoji">🕯️</span>
+                <div><strong>Os Livros dos Warren — Luz nas Trevas</strong><span>Ed &amp; Lorraine Warren</span></div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="book-category">
+            <div class="book-cat-header">
+              <span class="book-cat-icon">🏛️</span>
+              <span class="book-cat-name">Filosofia &amp; Clássicos</span>
+            </div>
+            <ul class="book-list">
+              <li><span class="book-emoji">🏺</span>
+                <div><strong>Meditações</strong><span>Marco Aurélio</span></div>
+              </li>
+              <li><span class="book-emoji">📋</span>
+                <div><strong>Manual</strong><span>Epicteto</span></div>
+              </li>
+              <li><span class="book-emoji">🌋</span>
+                <div><strong>Divina Comédia — Vol. 1, 2 e 3</strong><span>Dante Alighieri</span></div>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="secret-footer">
+        <span class="secret-footer-text">Provérbios 24:3 — "Com sabedoria se constrói a casa, e com inteligência ela se
+          firma."</span>
+      </div>
+    </div>
+  </div>
 
   <!-- Footer -->
   <footer class="footer">

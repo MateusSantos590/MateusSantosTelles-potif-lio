@@ -1258,3 +1258,538 @@ ul {
     grid-template-columns: 1fr;
   }
 }
+
+/* ══════════════════════════════════════════
+   NAV END WRAPPER
+   ══════════════════════════════════════════ */
+.nav-end {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+/* ══════════════════════════════════════════
+   SECRET BUTTON
+   ══════════════════════════════════════════ */
+.secret-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  opacity: 0.05;
+  transition: opacity 0.4s ease, transform 0.3s ease, background 0.3s ease;
+  position: relative;
+}
+
+.secret-btn:hover,
+.secret-btn:focus-visible {
+  opacity: 1;
+  background: rgba(139, 92, 246, .12);
+  transform: scale(1.15) rotate(-8deg);
+  outline: none;
+}
+
+/* Long-press on mobile reveals it */
+.secret-btn.revealed {
+  opacity: 1;
+}
+
+.secret-btn-icon {
+  font-size: 1.1rem;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ══════════════════════════════════════════
+   SECRET PANEL (full-screen drawer)
+   ══════════════════════════════════════════ */
+.secret-panel {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-end;
+  pointer-events: none;
+}
+
+.secret-panel.active {
+  pointer-events: all;
+}
+
+/* Dark overlay */
+.secret-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0);
+  transition: background 0.45s ease;
+  cursor: pointer;
+}
+
+.secret-panel.active .secret-overlay {
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(4px);
+}
+
+/* Sliding drawer */
+.secret-drawer {
+  position: relative;
+  width: min(680px, 100%);
+  height: 100%;
+  background: var(--bg-alt);
+  border-left: 1px solid var(--border-2);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transform: translateX(100%);
+  transition: transform 0.45s cubic-bezier(.4, 0, .2, 1);
+  box-shadow: -20px 0 60px rgba(0, 0, 0, .6);
+  scroll-behavior: smooth;
+}
+
+.secret-panel.active .secret-drawer {
+  transform: translateX(0);
+}
+
+/* Close button */
+.secret-close {
+  position: sticky;
+  top: 1rem;
+  right: 1rem;
+  float: right;
+  margin: 1rem 1rem 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--border-2);
+  background: var(--surface);
+  color: var(--text-muted);
+  cursor: pointer;
+  z-index: 10;
+  transition: var(--transition);
+  flex-shrink: 0;
+}
+
+.secret-close:hover {
+  background: rgba(139, 92, 246, .15);
+  color: var(--purple-3);
+  border-color: var(--purple-2);
+  transform: rotate(90deg);
+}
+
+/* Header inside panel */
+.secret-header {
+  padding: 0 2rem 2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.secret-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .75rem;
+  color: var(--purple-3);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: .5rem;
+}
+
+.secret-title {
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  font-weight: 800;
+  letter-spacing: -.03em;
+  margin-bottom: .5rem;
+}
+
+.secret-desc {
+  color: var(--text-muted);
+  font-size: .9rem;
+  line-height: 1.7;
+}
+
+/* Section blocks */
+.secret-section {
+  padding: 1.75rem 2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.secret-section:last-of-type {
+  border-bottom: none;
+}
+
+.secret-section-title {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  color: var(--text);
+}
+
+/* "More about me" mini cards */
+.secret-about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .85rem;
+}
+
+.secret-about-card {
+  display: flex;
+  align-items: flex-start;
+  gap: .85rem;
+  padding: 1rem 1.1rem;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  transition: var(--transition);
+}
+
+.secret-about-card:hover {
+  border-color: var(--border-2);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.secret-about-icon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.secret-about-card div {
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+}
+
+.secret-about-card strong {
+  font-size: .85rem;
+  color: var(--text);
+}
+
+.secret-about-card span {
+  font-size: .78rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* Books badge */
+.book-count-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .7rem;
+  font-weight: 600;
+  padding: .2rem .65rem;
+  border-radius: var(--radius-pill);
+  background: rgba(139, 92, 246, .12);
+  border: 1px solid var(--border-2);
+  color: var(--purple-3);
+  letter-spacing: .02em;
+}
+
+/* Book categories grid */
+.books-categories {
+  display: flex;
+  flex-direction: column;
+  gap: .85rem;
+}
+
+.book-category {
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.book-category:hover {
+  border-color: var(--border-2);
+}
+
+.book-cat-header {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  padding: .7rem 1rem;
+  background: rgba(139, 92, 246, .05);
+  border-bottom: 1px solid var(--border);
+}
+
+.book-cat-icon {
+  font-size: 1rem;
+}
+
+.book-cat-name {
+  font-size: .82rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: .01em;
+}
+
+.book-list {
+  padding: .5rem .75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.book-list li {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  padding: .55rem .25rem;
+  border-bottom: 1px solid rgba(139, 92, 246, .06);
+  transition: background 0.2s;
+  border-radius: 6px;
+}
+
+.book-list li:last-child {
+  border-bottom: none;
+}
+
+.book-list li:hover {
+  background: rgba(139, 92, 246, .05);
+  padding-left: .5rem;
+}
+
+.book-emoji {
+  font-size: .95rem;
+  flex-shrink: 0;
+  width: 1.4rem;
+  text-align: center;
+}
+
+.book-list li div {
+  display: flex;
+  flex-direction: column;
+  gap: .05rem;
+}
+
+.book-list li strong {
+  font-size: .82rem;
+  color: var(--text);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.book-list li span {
+  font-size: .72rem;
+  color: var(--text-faint);
+}
+
+/* Panel footer / quote */
+.secret-footer {
+  padding: 1.5rem 2rem;
+  margin-top: auto;
+  background: rgba(139, 92, 246, .04);
+  border-top: 1px solid var(--border);
+}
+
+.secret-footer-text {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .78rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  display: block;
+  font-style: italic;
+}
+
+/* ── Responsive ─────────────────────────── */
+@media (max-width: 600px) {
+  .secret-about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .secret-section,
+  .secret-header {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .secret-drawer {
+    width: 100%;
+    border-left: none;
+  }
+}
+
+/* ── Circular Skills Rings ──────────────────────── */
+.rings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 1.25rem 1rem;
+  margin-top: 1.25rem;
+}
+
+.ring-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .55rem;
+  cursor: pointer;
+  transition: transform .25s ease;
+  padding: .5rem;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+}
+
+.ring-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, .06);
+  background: rgba(255, 255, 255, .03);
+}
+
+.ring-svg-wrap {
+  position: relative;
+  width: 90px;
+  height: 90px;
+}
+
+.ring-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.ring-track {
+  fill: none;
+  stroke: rgba(255, 255, 255, .07);
+  stroke-width: 7;
+}
+
+.ring-progress {
+  fill: none;
+  stroke-width: 7;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 1.2s cubic-bezier(.4, 0, .2, 1), filter .3s ease;
+  filter: drop-shadow(0 0 5px currentColor);
+}
+
+.ring-card:hover .ring-progress {
+  filter: drop-shadow(0 0 12px currentColor);
+}
+
+.ring-center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .15rem;
+  pointer-events: none;
+}
+
+.ring-emoji {
+  font-size: 1.3rem;
+  line-height: 1;
+  transition: transform .25s ease;
+}
+
+.ring-card:hover .ring-emoji {
+  transform: scale(1.15);
+}
+
+.ring-num {
+  font-size: .7rem;
+  font-weight: 700;
+  color: var(--text);
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: .03em;
+}
+
+.ring-name {
+  font-size: .72rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-align: center;
+  line-height: 1.3;
+  transition: color .25s ease;
+}
+
+.ring-card:hover .ring-name {
+  color: var(--text);
+}
+
+/* Info box at bottom of rings panel */
+.ring-info-box {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding: 1rem 1.25rem;
+  background: rgba(139, 92, 246, .05);
+  border: 1px solid rgba(139, 92, 246, .15);
+  border-radius: 12px;
+  min-height: 68px;
+  transition: border-color .35s ease, background .35s ease;
+}
+
+.ring-info-ico {
+  font-size: 1.75rem;
+  flex-shrink: 0;
+  transition: transform .25s ease;
+}
+
+.ring-info-box:hover .ring-info-ico {
+  transform: scale(1.1);
+}
+
+.ring-info-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: .2rem;
+  min-width: 0;
+}
+
+.ring-info-text strong {
+  font-size: .88rem;
+  font-weight: 700;
+  color: var(--text);
+  display: block;
+}
+
+.ring-info-text span {
+  font-size: .8rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  display: block;
+}
+
+.ring-info-badge {
+  font-size: 1.35rem;
+  font-weight: 800;
+  font-family: 'JetBrains Mono', monospace;
+  flex-shrink: 0;
+  transition: color .25s ease;
+}
+
+@media (max-width: 480px) {
+  .rings-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: .75rem .5rem;
+  }
+
+  .ring-svg-wrap {
+    width: 70px;
+    height: 70px;
+  }
+
+  .ring-info-box {
+    flex-wrap: wrap;
+  }
+
+  .ring-info-badge {
+    width: 100%;
+    text-align: right;
+  }
+}
